@@ -39,14 +39,14 @@ var feed = new RSS({
 
 var generatefeed = function(host) {
   if(feedgenerated) return; // feed already generated
-  
+
   feed.site_url = 'http://' + host + '/'; // assuming http
   feed.feed_url = url.resolve(feed.site_url, 'rss');
-  
+
   for(var i = 0; i < feeditems.length; ++i) {
     var $markup = cheerio.load(feeditems[i].description);
     $markup('h1').remove(); // not needed. feed already has title
-    
+
     // fixing all relative url
     // note: all url like xpto.com/etc (without protocol) will be interpreted as relative. any ideas how to fix it?
     $markup('a').each(function(idx, elem) {
@@ -55,7 +55,7 @@ var generatefeed = function(host) {
         $markup(this).attr('href', url.resolve(feed.site_url, href));
       }
     });
-    
+
     feed.item({
       title:  feeditems[i].title,
       description: $markup.html(),
@@ -63,7 +63,7 @@ var generatefeed = function(host) {
       date: feeditems[i].date
     });
   }
-  
+
   xml = feed.xml(); // rendering the xml
   feedgenerated = true;
 }
@@ -77,9 +77,9 @@ for (var i = 0, l = filenames.length; i<l; i++) {
 
 filenames
   .sort(function (date1, date2) {
-    
+
     //
-    // This is a comparison function that will result in 
+    // This is a comparison function that will result in
     // dates being sorted in descending order.
     //
     var date1 = new Date(Date.parse(date1));
@@ -111,23 +111,23 @@ filenames
     //
     var markup = marked(data).replace(/<h1>(.*?)<\/h1>/, function(a, h1) {
       title = h1;
-        
+
       // turn the title into something that we can use as a link.
       id = h1.replace(/ /g, '-');
-        
+
       // add a link to the article to the table of contents.
       toc.push([
-        '<div><a href="#', id, '">', 
+        '<div><a href="#', id, '">',
         h1,
         '</a> <span class="date">', date, '</span></div>'
       ].join(''));
-  
+
       // return the new version of the header.
       return '<a id="' + id + '"><h1><a href="#' + id + '">' + h1 + '</a></h1>';
     });
 
     content.push(markup);
-    
+
     feeditems.push({
       title:  title,
       description: markup,
@@ -151,12 +151,12 @@ http.createServer(function (req, res) {
     res.end(index);
     return;
   }
-  
+
   //
   // getting the rss feed
   //
   if (req.url === '/rss') {
-    
+
     if (feedgenerated === false) {
       // generating the feed here because we need the request host name
       // it's generated only once
@@ -179,7 +179,7 @@ http.createServer(function (req, res) {
   // set the appropriate mime type if possible.
   //
   var mimetype = mime.lookup(path.extname(filepath).split(".")[1]);
-  
+
   if (!mimetype) {
     return;
   }
@@ -190,7 +190,7 @@ http.createServer(function (req, res) {
   // find out if the file is there and if it is serve it...
   //
   fs.stat(filepath, function (err, stat) {
-    
+
     if (err && err.code === 'ENOENT') {
         res.writeHead(404, { 'Content-Type': 'plain/text' });
         res.end('not found');
@@ -203,4 +203,4 @@ http.createServer(function (req, res) {
     }
   });
 
-}).listen(process.env.PORT || 80);
+}).listen(process.env.PORT || 3000);

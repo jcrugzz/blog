@@ -1,4 +1,4 @@
-/* 
+/*
  * Fonts
  * -----
  */
@@ -24,15 +24,15 @@
 @font-face {
   font-family: 'FontAwesome';
   src: url('../../fonts/fontawesome/fontawesome-webfont.eot');
-  src: url('../../fonts/fontawesome/fontawesome-webfont.eot?#iefix') format('eot'), 
-  	 	 url('../../fonts/fontawesome/fontawesome-webfont.woff') format('woff'), 
-  	 	 url('../../fonts/fontawesome/fontawesome-webfont.ttf') format('truetype'), 
+  src: url('../../fonts/fontawesome/fontawesome-webfont.eot?#iefix') format('eot'),
+  	 	 url('../../fonts/fontawesome/fontawesome-webfont.woff') format('woff'),
+  	 	 url('../../fonts/fontawesome/fontawesome-webfont.ttf') format('truetype'),
   	 	 url('../../fonts/fontawesome/fontawesome-webfont.svg#FontAwesome') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-/* 
+/*
  * Resets
  * ------
  */
@@ -40,11 +40,12 @@
 body {
 	padding: 0px;
 	margin: 0px;
+	background-color: #eee
 }
 
 h1, h2, h3, h4, #side {
 	font-family: 'museo_slab';
-	color: #444;
+	color: #2d2d2d;
 }
 
 h1, h2, h3, h4 {
@@ -61,7 +62,7 @@ h1 a:hover:before {
 	left: -30px;
 
 	content: "\f08d";
-	
+
 	font-family: 'FontAwesome';
   font-weight: normal;
   font-style: normal;
@@ -79,7 +80,7 @@ p {
 
 a, a.visited, a.active, h1 a:hover {
 	text-decoration: none;
-	color: #b90000;
+	color: #2d2d2d;
 }
 
 a:hover {
@@ -91,12 +92,12 @@ hr {
 	border-top: 1px solid rgba(0,0,0, .1);
 }
 
-pre { 
+pre {
 	border: 1px solid #e0ded3;
 	border-radius: 4px;
 	margin: 10px 10px 40px 10px;
 	padding: 10px;
-	background-color: #f0efe8;
+	background-color: #ccc;
 	overflow: auto;
 	font-size: 14px;
 }
@@ -107,11 +108,11 @@ ol {
   font-family: 'ABeeZee', sans-serif;
 }
 
-ol li { 
+ol li {
   padding: 4px 0;
 }
 
-/* 
+/*
  * Syntax
  * ------
  */
@@ -124,7 +125,7 @@ code .number               { color: red }
 code .comment              { color: grey }
 
 
-/* 
+/*
  * Sidebar
  * -------
  */
@@ -179,7 +180,7 @@ code .comment              { color: grey }
 	position: relative;
 	padding-top: 40px;
 	height: 390px;
-	background-color: #b90000;
+	background-color: #2d2d2d;
 	display: inline-block;
 	color: #ebead5;
 	line-height: 20px
@@ -201,10 +202,10 @@ code .comment              { color: grey }
 }
 
 #floating-head {
-  display: none;
+  	display: none;
 }
 
-/* 
+/*
  * Content
  * -------
  */
@@ -213,15 +214,15 @@ code .comment              { color: grey }
 #articles {
 	margin-left: 280px;
 	margin-right: 50px;
-  max-width: 700px;
+  	max-width: 700px;
 }
 
 #articles img {
-  width: 100%;
+  	width: 100%;
 }
 
 #toc {
-  position: relative;
+  	position: relative;
 	padding: 100px 0;
 	font-family: 'museo_slab';
 }
@@ -229,12 +230,12 @@ code .comment              { color: grey }
 #toc div {
 	border-bottom: 2px dotted rgba(0,0,0, .2);
 	height: 16px;
-  white-space: nowrap;
+  	white-space: nowrap;
 }
 
 #toc .date {
 	position: absolute;
-  right: 0px;
+  	right: 0px;
 	color: #808080;
 	display: inline-block;
 	background-color: #fff;
@@ -246,11 +247,11 @@ code .comment              { color: grey }
 	font-size: 16px;
 	margin: 4px 0 4px;
 	display: inline-block;
-	background-color: #fff;
+	background-color: #eee;
 	padding-right: 10px;
 }
 
-/* 
+/*
  * Mobile
  * ------
  */
@@ -281,7 +282,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
   #floating-head {
     font-size: 25px;
     font-family: 'museo_slab';
-    background-color: #b90000;
+    background-color: #2d2d2d;
     display: block;
     position: relative;
     padding: 10px;
@@ -289,14 +290,14 @@ only screen and (min-device-pixel-ratio : 1.5) {
   }
 
   #floating-head p {
-    color: #ebead5;
+    color: #eee;
     margin: 0px;
-    padding: 10px 0 0;
+    padding: 10px 0 5px 0;
   }
 
   #floating-head a {
-    
-    color: #ebead5;
+
+    color: #eee;
     margin: 0 10px 0;
   }
 }

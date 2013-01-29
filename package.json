@@ -1,12 +1,20 @@
 {
-	"name": "blog",
-	"description": "a minimalist blog",
-	"version": "0.0.1",
-	"dependencies": {
-		"marked": "*",
-		"mime": "*",
-		"highlight.js": "*",
-        "cheerio": "*",
-        "rss": "*"
-	}
+  "name": "blog",
+  "description": "a minimalist blog",
+  "version": "0.0.1",
+  "dependencies": {
+    "marked": "*",
+    "mime": "*",
+    "highlight.js": "*",
+    "cheerio": "*",
+    "rss": "*"
+  },
+  "readmeFilename": "README.md",
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jcrugzz/blog.git"
+  }
 }
