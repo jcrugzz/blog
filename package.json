@@ -16,5 +16,13 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/jcrugzz/blog.git"
+  },
+  "domains": [
+    "jcruger.com",
+    "www.jcruger.com"
+  ],
+  "subdomain": "jcruger.blog",
+  "engines": {
+    "node": "0.8.x"
   }
 }
