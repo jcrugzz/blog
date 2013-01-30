@@ -182,7 +182,7 @@ code .comment              { color: grey }
 	height: 390px;
 	background-color: #2d2d2d;
 	display: inline-block;
-	color: #ebead5;
+	color: #eee;
 	line-height: 20px
 }
 
@@ -236,9 +236,9 @@ code .comment              { color: grey }
 #toc .date {
 	position: absolute;
   	right: 0px;
-	color: #808080;
+	color: #2d2d2d;
 	display: inline-block;
-	background-color: #fff;
+	background-color: #eee;
 	padding-top: 4px;
 	padding-left: 10px;
 }
